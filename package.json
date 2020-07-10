@@ -1,0 +1,51 @@
+{
+  "name": "test_redux_project",
+  "version": "1.0.0",
+  "description": "the tryout of that redux thing",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./app/*.jsx",
+    "lint:fix": "eslint ./app/*.jsx --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakart/TestReduxProject.git"
+  },
+  "keywords": [],
+  "author": "pakart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pakart/TestReduxProject/issues"
+  },
+  "homepage": "https://github.com/pakart/TestReduxProject#readme",
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4",
+    "prettier": "^2.0.5",
+    "webpack": "^4.20.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}

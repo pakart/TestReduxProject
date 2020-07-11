@@ -16,7 +16,7 @@ store.dispatch({
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppView />
+      <AppView />
   </Provider>,
   document.getElementById('container'),
 );

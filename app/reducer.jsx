@@ -1,5 +1,6 @@
 const { Map } = require('immutable');
 
+// eslint-disable-next-line func-names
 const reducer = function (state = Map(), action) {
   switch (action.type) {
     case 'SET_STATE':

@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 const addPhone = function (phone) {
   return {
     type: 'ADD_PHONE',

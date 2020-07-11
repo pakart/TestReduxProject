@@ -11,7 +11,7 @@
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "react/prop-types": 0,
-        "max-classes-per-file": ["error", 4]
+        "max-classes-per-file": ["error", 5]
     },
      
     "plugins": [

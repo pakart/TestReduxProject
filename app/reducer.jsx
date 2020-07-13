@@ -5,12 +5,12 @@ const reducer = function (state = Map(), action) {
   switch (action.type) {
     case 'SET_STATE':
       return state.merge(action.state);
-    case 'ADD_PHONE':
-      return state.update('phones', (phones) => phones.push(action.phone));
-    case 'DELETE_PHONE':
-      return state.update('phones',
-        (phones) => phones.filterNot(
-          (item) => item === action.phone,
+    case 'ADD_RECORD':
+      return state.update('records', (records) => records.push(action.record));
+    case 'DELETE_RECORD':
+      return state.update('records',
+        (records) => records.filterNot(
+          (item) => item === action.record,
         ));
     default:
       return state;

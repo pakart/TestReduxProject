@@ -23,7 +23,7 @@ class AppView extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    phones: state.get('phones'),
+    records: state.get('records'),
   };
 }
 

@@ -10,7 +10,7 @@ const store = redux.createStore(reducer);
 store.dispatch({
   type: 'SET_STATE',
   state: {
-    phones: ['iPhone 7 Plus', 'Samsung Galaxy A5'],
+    records: [],
   },
 });
 

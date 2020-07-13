@@ -1,15 +1,15 @@
 /* eslint-disable func-names */
-const addPhone = function (phone) {
+const addRecord = function (record) {
   return {
-    type: 'ADD_PHONE',
-    phone,
+    type: 'ADD_RECORD',
+    record,
   };
 };
-const deletePhone = function (phone) {
+const deleteRecord = function (record) {
   return {
-    type: 'DELETE_PHONE',
-    phone,
+    type: 'DELETE_RECORD',
+    record,
   };
 };
 
-module.exports = { addPhone, deletePhone };
+module.exports = { addRecord, deleteRecord };

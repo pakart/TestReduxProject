@@ -6,19 +6,40 @@ const React = require('react');
 const LeftSideBar = require('./sidebars/leftsidebar.jsx');
 const RightSideBar = require('./sidebars/rightsidebar.jsx');
 
+function getJsonObject(url) {
+  return new Promise((succeed, fail) => {
+    const request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.addEventListener('load', () => {
+      if (request.status < 400) succeed(request.response);
+      else fail(new Error(`Request failed: ${request.statusText}`));
+    });
+    request.addEventListener('error', () => {
+      fail(new Error('Network error'));
+    });
+    request.send();
+  });
+}
+
 class PhoneForm extends React.Component {
   onClick() {
-    if (this.refs.phoneInput.value !== '') {
+    getJsonObject('http://jsonplaceholder.typicode.com/posts').then((response) => JSON.parse(response)).then((data) => {
+      this.refs.phoneInput.value = '';
+      data.forEach((element) => {
+        this.props.addPhone(element.body);
+      });
+    });
+    /* if (this.refs.phoneInput.value !== '') {
       const itemText = this.refs.phoneInput.value;
       this.refs.phoneInput.value = '';
       return this.props.addPhone(itemText);
-    }
+    } */
   }
 
   render() {
     return <div>
               <input ref="phoneInput" />
-              <button onClick = {this.onClick.bind(this)}>Добавить</button>
+              <button onClick = {this.onClick.bind(this)}>Отправить GET</button>
           </div>;
   }
 }
@@ -26,7 +47,6 @@ class PhoneForm extends React.Component {
 class PhoneItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log('item', this.props);
   }
 
   render() {
@@ -43,7 +63,6 @@ class PhoneItem extends React.Component {
 class PhonesList extends React.Component {
   constructor(props) {
     super(props);
-    console.log('list', this.props);
   }
 
   render() {
@@ -58,7 +77,6 @@ class PhonesList extends React.Component {
 class MainView extends React.Component {
   constructor(props) {
     super(props);
-    console.log('wtf', this.props);
   }
 
   render() {

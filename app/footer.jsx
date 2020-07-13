@@ -3,9 +3,9 @@ const React = require('react');
 
 class Footer extends React.Component {
   render() {
-    return <aside>
+    return <footer>
             <h2> here is a footer </h2>
-        </aside>;
+        </footer>;
   }
 }
 module.exports = Footer;

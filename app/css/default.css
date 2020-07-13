@@ -58,6 +58,13 @@ header, footer {
     display: flex;
     flex-direction: column;
 }
+
+.wiki-frame{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
  
 @media (max-device-width:480px) {
     main {

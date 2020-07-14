@@ -12,6 +12,13 @@ const reducer = function (state = Map(), action) {
         (records) => records.filterNot(
           (item) => item === action.record,
         ));
+    case 'EDIT_RECORD':
+      state.update('records', (records) => records.push(action.record));
+      return state.update('records',
+        (records) => records.filterNot(
+          (item) => item === action.record,
+        ));
+
     default:
       return state;
   }

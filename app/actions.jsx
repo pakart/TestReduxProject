@@ -1,15 +1,17 @@
 /* eslint-disable func-names */
-const addRecord = function (record) {
-  return {
-    type: 'ADD_RECORD',
-    record,
-  };
-};
-const deleteRecord = function (record) {
-  return {
-    type: 'DELETE_RECORD',
-    record,
-  };
-};
+const addRecord = (record) => ({
+  type: 'ADD_RECORD',
+  record,
+});
 
-module.exports = { addRecord, deleteRecord };
+const deleteRecord = (record) => ({
+  type: 'DELETE_RECORD',
+  record,
+});
+
+const editRecord = (record) => ({
+  type: 'EDIT_RECORD',
+  record,
+});
+
+module.exports = { addRecord, editRecord, deleteRecord };

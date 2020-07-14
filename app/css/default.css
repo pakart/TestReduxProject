@@ -65,7 +65,17 @@ header, footer {
     width: auto;
     height: auto;
 }
- 
+textarea{
+    width: 100%;
+    height: auto;
+}
+.save-button-invisible{
+    display: none;
+}
+.save-button-visible{
+    display: inline;
+}
+
 @media (max-device-width:480px) {
     main {
         flex-direction: column;

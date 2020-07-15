@@ -7,8 +7,15 @@ html, body {
     font-family: verdana, arial, sans-serif;
 }
 
+.nav-item{
+    margin-left: 10px;
+    background-color:  #546e7a;
+}
+
 nav{
-    color: #37474f;
+    color:  #fff;
+    display: flex;
+    flex-direction: row;
 }
 
 body {

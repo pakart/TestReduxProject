@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable react/no-string-refs */
@@ -83,6 +84,23 @@ class RecordsList extends React.Component {
         </div>;
   }
 }
+class ListComponent extends React.Component {
+  render() {
+    return <article>
+      <RecordsForm addRecord={this.props.addRecord} />
+      <AddRecordForm addRecord={this.props.addRecord} />
+      <RecordsList {...this.props} />
+    </article>;
+  }
+}
+
+class CoffeeComponent extends React.Component {
+  render() {
+    return <article>
+      Привет, мир!
+    </article>;
+  }
+}
 
 class MainView extends React.Component {
   constructor(props) {
@@ -90,14 +108,17 @@ class MainView extends React.Component {
   }
 
   render() {
+    if (this.props.content === 'coffee') {
+      return <main>
+        <CoffeeComponent {...this.props} />
+        <LeftSideBar />
+        <RightSideBar />
+      </main>;
+    }
     return <main>
-            <article>
-                <RecordsForm addRecord={this.props.addRecord} />
-                <AddRecordForm addRecord={this.props.addRecord}/>
-                <RecordsList {...this.props} />
-            </article>
-            <LeftSideBar />
-            <RightSideBar />
+        <ListComponent {...this.props} />
+        <LeftSideBar />
+        <RightSideBar />
       </main>;
   }
 }

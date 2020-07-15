@@ -10,6 +10,7 @@ const store = redux.createStore(reducer);
 store.dispatch({
   type: 'SET_STATE',
   state: {
+    content: 'list',
     records: [],
   },
 });

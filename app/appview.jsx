@@ -11,10 +11,14 @@ const Footer = require('./footer.jsx');
 const MainView = require('./mainview.jsx');
 
 class AppView extends React.Component {
+  updateData(value) {
+    this.setState({ content: value });
+  }
+
   render() {
     return <div className ='appview'>
       <HeadView />
-      <HorizotalNavView />
+      <HorizotalNavView {...this.props}/>
       <MainView {...this.props} />
       <Footer />
     </div>;
@@ -24,6 +28,7 @@ class AppView extends React.Component {
 function mapStateToProps(state) {
   return {
     records: state.get('records'),
+    content: state.get('content'),
   };
 }
 

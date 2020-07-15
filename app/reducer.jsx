@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
+// eslint-disable-next-line func-names
 const { Map } = require('immutable');
 
-// eslint-disable-next-line func-names
 const reducer = function (state = Map(), action) {
   switch (action.type) {
     case 'SET_STATE':
@@ -18,7 +19,8 @@ const reducer = function (state = Map(), action) {
         (records) => records.filterNot(
           (item) => item === action.record,
         ));
-
+    case 'SWITCH_CONTENT':
+      return state.update('content', (content) => { content = action.content; return content; });
     default:
       return state;
   }

@@ -14,4 +14,11 @@ const editRecord = (record) => ({
   record,
 });
 
-module.exports = { addRecord, editRecord, deleteRecord };
+const switchContent = (content) => ({
+  type: 'SWITCH_CONTENT',
+  content,
+});
+
+module.exports = {
+  addRecord, editRecord, deleteRecord, switchContent,
+};

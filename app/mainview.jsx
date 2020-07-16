@@ -8,6 +8,7 @@ const LeftSideBar = require('./sidebars/leftsidebar.jsx');
 const RightSideBar = require('./sidebars/rightsidebar.jsx');
 const getJsonObject = require('./network.jsx');
 const AddRecordForm = require('./records_components/add_record.jsx');
+const TicTacToeComponent = require('./tic_tac_toe_component.jsx');
 
 class RecordsForm extends React.Component {
   onClick() {
@@ -94,23 +95,15 @@ class ListComponent extends React.Component {
   }
 }
 
-class CoffeeComponent extends React.Component {
-  render() {
-    return <article>
-      Привет, мир!
-    </article>;
-  }
-}
-
 class MainView extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    if (this.props.content === 'coffee') {
+    if (this.props.content === 'tic_tac_toe') {
       return <main>
-        <CoffeeComponent {...this.props} />
+        <TicTacToeComponent {...this.props} />
         <LeftSideBar />
         <RightSideBar />
       </main>;

@@ -13,14 +13,14 @@ class NavBarListItem extends React.Component {
   }
 }
 
-class NavBarCoffeeItem extends React.Component {
+class NavBarTicTacToeItem extends React.Component {
   openCoffee() {
-    this.props.switchContent('coffee');
+    this.props.switchContent('tic_tac_toe');
   }
 
   render() {
     return <div className='nav-item' onClick={this.openCoffee.bind(this)}>
-      Кофеварка
+      Крестики нолики
       </div>;
   }
 }
@@ -29,7 +29,7 @@ class HorizontalNavView extends React.Component {
   render() {
     return <nav>
             <NavBarListItem {...this.props}/>
-      <NavBarCoffeeItem {...this.props}/>
+      <NavBarTicTacToeItem {...this.props}/>
         </nav>;
   }
 }

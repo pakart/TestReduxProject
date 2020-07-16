@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./app/*.jsx",
-    "lint:fix": "eslint ./app/records_components/*jsx --fix",
+    "lint:fix": "eslint ./app/*jsx --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --hot --open",
     "build": "webpack"

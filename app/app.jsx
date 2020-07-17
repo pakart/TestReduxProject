@@ -10,6 +10,7 @@ const store = redux.createStore(reducer);
 store.dispatch({
   type: 'SET_STATE',
   state: {
+    pair: ['28 days later', 'Trainspotting'],
     content: 'list',
     records: [],
   },

@@ -119,7 +119,7 @@ class TicTacToeComponent extends React.Component {
     } else {
       status = `Next turn: ${this.state.xIsNext ? 'X' : 'O'}`;
     }
-    return <div className="game">
+    return <article className="game">
         <div className="game-board">
           <Board squares={current.squares}
             onClick={(i) => this.handleClick(i)}/>
@@ -128,7 +128,7 @@ class TicTacToeComponent extends React.Component {
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
-            </div>;
+            </article>;
   }
 }
 

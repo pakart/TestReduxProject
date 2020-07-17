@@ -9,6 +9,7 @@ const RightSideBar = require('./sidebars/rightsidebar.jsx');
 const getJsonObject = require('./network.jsx');
 const AddRecordForm = require('./records_components/add_record.jsx');
 const TicTacToeComponent = require('./tic_tac_toe_component.jsx');
+const VotingComponent = require('./voting_component.jsx');
 
 class RecordsForm extends React.Component {
   onClick() {
@@ -55,12 +56,15 @@ class RecordItem extends React.Component {
   render() {
     return <div>
               <p>
-              <textarea ref={(recordArea) => { this.recordArea = recordArea; }}
+        <textarea key={'lol'} ref={(recordArea) => { this.recordArea = recordArea; }}
                 readOnly defaultValue={this.props.text}
                 onBlur={this.onBlur.bind(this)}></textarea><br />
+
               <button onClick={() => this.props.deleteRecord(this.props.text)}>
                 Удалить запись</button>
+
               <button onClick={this.onClick.bind(this)}>Редактировать запись</button>
+
               <button className='save-button-invisible'
                 ref={(saveButton) => { this.saveButton = saveButton; }}
                 onClick={this.saveButtonAction.bind(this)}>Сохранить</button>
@@ -77,7 +81,8 @@ class RecordsList extends React.Component {
 
   render() {
     return <div>
-      {this.props.records.map((item) => <RecordItem key={item}
+      {
+        this.props.records.map((item) => <RecordItem key={item}
         text={item}
         deleteRecord={this.props.deleteRecord}
         editRecord={this.props.editRecord}
@@ -101,18 +106,29 @@ class MainView extends React.Component {
   }
 
   render() {
-    if (this.props.content === 'tic_tac_toe') {
-      return <main>
+    switch (this.props.content) {
+      case 'tic_tac_toe':
+        return <main>
         <TicTacToeComponent {...this.props} />
         <LeftSideBar />
         <RightSideBar />
       </main>;
+      case 'list':
+        return <main>
+          <ListComponent {...this.props} />
+          <LeftSideBar />
+          <RightSideBar />
+        </main>;
+      case 'voting':
+        return <main>
+          <VotingComponent {...this.props} />
+          <LeftSideBar />
+          <RightSideBar />
+        </main>;
+
+      default:
+        break;
     }
-    return <main>
-        <ListComponent {...this.props} />
-        <LeftSideBar />
-        <RightSideBar />
-      </main>;
   }
 }
 

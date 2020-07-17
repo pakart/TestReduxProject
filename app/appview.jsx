@@ -29,6 +29,7 @@ function mapStateToProps(state) {
   return {
     records: state.get('records'),
     content: state.get('content'),
+    pair: state.get('pair'),
   };
 }
 
